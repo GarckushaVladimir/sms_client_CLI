@@ -13,7 +13,7 @@ class Config:
     password: str
 
     @classmethod
-    def from_file(cls, path: str = "../config.toml") -> "Config":
+    def from_file(cls, path: str = "config.toml") -> "Config":
         with open(path, 'rb') as f:
             data = tomllib.load(f)
         return cls(**data["sms_service"])
